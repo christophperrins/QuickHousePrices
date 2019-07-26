@@ -1,9 +1,6 @@
 #install.packages("shiny")
 library(shiny)
 options(scipen = 9999)
-
-?sidebarLayout
-
 ui <- fluidPage(
     titlePanel("Hello Shiny!"),
   
@@ -22,7 +19,7 @@ ui <- fluidPage(
     mainPanel(
       
       textOutput(outputId = "Predicted"),
-      plotOutput(outputId = "Plot")
+      plotOutput(outputId = "Ploty")
     )
   )
 )
@@ -42,7 +39,7 @@ server <- function(input, output) {
     paste("Predicted Value of £", cleverCleverLogic(input))
   })
   
-  output$Plot <- renderPlot({
+  output$Ploty <- renderPlot({
     plot(c(1:20), c(1:20))
   }
   
